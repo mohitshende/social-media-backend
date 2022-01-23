@@ -20,10 +20,12 @@ mongoose.connect(
 app.use(cors());
 app.use(express.json());
 
+const PORT = process.env.PORT || 8000;
+
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
   console.log("Backend server is running!");
 });
